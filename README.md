@@ -22,14 +22,14 @@ A HTTP Server for Mock Data.
 * [caller](totherik/caller): figure out the caller, to generate module path
 * [commander](https://github.com/tj/commander.js): generate command-line interface
 
-## Preparation
+## Preparations
 
 * node >= 6.0.0
 * npm >= 3.8.6
 
 ## Usage
 
-* `npm install -g hot-mock-server`
+* `npm install -g hot-mock-server` (maybe need root authorization)
 * `hmserver -d <data dir path> -p <port>`
 
 ## Attentions
