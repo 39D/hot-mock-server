@@ -1,0 +1,36 @@
+{
+  "name": "mock-server",
+  "version": "1.0.0",
+  "description": "An HTTP Server for Mock Data.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/hmserver",
+    "sample": "node ./index.js",
+    "test": "mocha -R spec -t 15000 -r thunk-mocha test/*.test.js",
+    "cov": "istanbul cover node_modules/mocha/bin/_mocha && codecov"
+  },
+  "bin": {
+    "hmserver": "./bin/hmserver"
+  },
+  "repository": "git@github.com:39D/mock-server.git",
+  "author": "XWang1024 <xwang1024@126.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "caller": "^1.0.1",
+    "commander": "^2.9.0",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-datetime": "^1.4.1",
+    "chai-http": "^3.0.0",
+    "codecov": "^2.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "thunk-mocha": "^1.0.8"
+  }
+}

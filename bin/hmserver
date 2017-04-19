@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const path = require('path');
+const commander = require('commander');
+const generateApp = require('../lib/app');
+
+const pkg = require('../package.json');
+
+commander.version(pkg.version)
+  .option('-d --data-path <path>', 'data source path')
+  .option('-p --port <port>', 'port will be listened')
+  .parse(process.argv);
+
+if(!commander.dataPath) return console.error('`data-path` is required');
+if(!commander.port) return console.error('`port` is required');
+
+const absPath = path.resolve(process.cwd(), commander.dataPath);
+
+const app = generateApp(absPath);
+
+app.listen(commander.port, () => {
+  console.log(`Mock server is now running at port ${commander.port}...`);
+});
