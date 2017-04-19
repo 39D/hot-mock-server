@@ -1,7 +1,24 @@
 {
   "name": "hot-mock-server",
+  "preferGlobal": true,
   "version": "1.0.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "description": "An HTTP Server for Mock Data.",
+  "keywords": [
+    "cli",
+    "tools",
+    "express",
+    "hot reload",
+    "mock",
+    "mock server"
+  ],
+  "author": {
+    "name": "XWang1024",
+    "email": "xwang1024@126.com",
+    "url": "https://github.com/xwang1024"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/hmserver",
@@ -12,8 +29,18 @@
   "bin": {
     "hmserver": "./bin/hmserver"
   },
-  "repository": "git@github.com:39D/hot-mock-server.git",
-  "author": "XWang1024 <xwang1024@126.com>",
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib",
+    "example": "./data-sample"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/39D/hot-mock-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/39D/hot-mock-server/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.1",
