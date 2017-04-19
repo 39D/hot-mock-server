@@ -1,7 +1,7 @@
 # hot-mock-server
 
-[![Build Status](https://travis-ci.org/39D/mock-server.svg?branch=master)](https://travis-ci.org/39D/mock-server)
-[![codecov](https://codecov.io/gh/39D/mock-server/branch/master/graph/badge.svg)](https://codecov.io/gh/39D/mock-server)
+[![Build Status](https://travis-ci.org/39D/hot-mock-server.svg?branch=master)](https://travis-ci.org/39D/hot-mock-server)
+[![codecov](https://codecov.io/gh/39D/hot-mock-server/branch/master/graph/badge.svg)](https://codecov.io/gh/39D/hot-mock-server)
 
 A HTTP Server for Mock Data.
 
@@ -24,8 +24,8 @@ A HTTP Server for Mock Data.
 
 ## Preparation
 
-* node >= 4.0.0
-* npm >= 2.14.2
+* node >= 6.0.0
+* npm >= 3.8.6
 
 ## Usage
 

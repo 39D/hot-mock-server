@@ -1,5 +1,5 @@
 {
-  "name": "mock-server",
+  "name": "hot-mock-server",
   "version": "1.0.0",
   "description": "An HTTP Server for Mock Data.",
   "main": "index.js",
@@ -12,7 +12,7 @@
   "bin": {
     "hmserver": "./bin/hmserver"
   },
-  "repository": "git@github.com:39D/mock-server.git",
+  "repository": "git@github.com:39D/hot-mock-server.git",
   "author": "XWang1024 <xwang1024@126.com>",
   "license": "MIT",
   "dependencies": {
