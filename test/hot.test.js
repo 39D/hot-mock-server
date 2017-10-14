@@ -104,20 +104,5 @@ describe('test app', () => {
         }, 200);
       })
     });
-
-    it('should handle move dir', (done) => {
-      fs.mkdirSync(newDirDist);
-      fs.writeFileSync(newDirFileDist, newFileData);
-      exec(`mv ${newDirDist} ${newDirDist.replace(/a1$/, 'a2')}`, (err, stdout, stderr) => {
-        setTimeout(() => {
-          chai.request(app)
-            .post('/hot')
-            .end((err, res) => {
-              res.should.have.status(404);
-              done();
-            });
-        }, 200);
-      })
-    });
   });
 });
