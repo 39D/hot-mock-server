@@ -3,9 +3,11 @@
 const path = require('path');
 const generateApp = require("./lib/app");
 
-const app = generateApp(path);
 const port = 8000;
+const mockAbsPath = path.resolve(process.cwd(), 'data-sample');
 
-app.listen(port, () => {
-  console.log(`Mock server is now running at port ${port}...`);
+generateApp(mockAbsPath).then((app) => {
+  app.listen(port, () => {
+    console.log(`Mock server is now running at port ${port}...`);
+  });
 });

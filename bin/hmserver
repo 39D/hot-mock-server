@@ -18,8 +18,9 @@ if(!commander.port) return console.error('`port` is required');
 
 const absPath = path.resolve(process.cwd(), commander.dataPath);
 
-const app = generateApp(absPath);
-
-app.listen(commander.port, () => {
-  console.log(`Mock server is now running at port ${commander.port}...`);
+generateApp(absPath).then((app) => {
+  app.listen(commander.port, () => {
+    console.log(`Mock server is now running at port ${commander.port}...`);
+  });
 });
+

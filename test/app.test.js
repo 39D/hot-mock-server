@@ -11,16 +11,24 @@ chai.use(require('chai-datetime'));
 
 // backup data file
 const dataFilePath = path.resolve(__dirname, './data/index.js');
-const anotherDataFilePath = path.resolve(__dirname, './data/another.js');
+const anotherDataFilePath = path.resolve(__dirname, './ext-data/index.js');
 let orginalFileData = fs.readFileSync(dataFilePath);
 let anotherFileData = fs.readFileSync(anotherDataFilePath);
 
 describe('test app', () => {
   const testDataDir = path.resolve(__dirname, './data');
-  const app = generateApp(testDataDir);
+  let app;
+  
+  before((done) => {
+    generateApp(testDataDir).then((testApp) => {
+      app = testApp;
+      done();
+    });
+  });
 
-  beforeEach(() => {
+  beforeEach((done) => {
     fs.writeFileSync(dataFilePath, orginalFileData);
+    setTimeout(done, 200)
   });
   
   describe('GET /', () => {
@@ -42,14 +50,16 @@ describe('test app', () => {
 
     it('it should hot reload', (done) => {
       fs.writeFileSync(dataFilePath, anotherFileData);
-      chai.request(app)
-        .get('/')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('object');
-          res.body.method.should.equal('GET');
-          done();
-        });
+      setTimeout(() => {
+        chai.request(app)
+          .get('/')
+          .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object');
+            res.body.method.should.equal('GET');
+            done();
+          });
+      }, 200)
     });
   });
 
@@ -121,14 +131,17 @@ describe('test app', () => {
 
     it('it should hot reload', (done) => {
       fs.writeFileSync(dataFilePath, anotherFileData);
-      chai.request(app)
-        .get('/custom')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('object');
-          res.body.success.should.equal(true);
-          done();
-        });
+
+      setTimeout(() => {
+        chai.request(app)
+          .get('/custom')
+          .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object');
+            res.body.success.should.equal(true);
+            done();
+          });
+      }, 300);
     });
   });
 

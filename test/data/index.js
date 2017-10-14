@@ -46,6 +46,11 @@ const data = {
       res.send({ method: "DELETE", random });
     },
   },
+  "/hot": {
+    GET: {
+      "method": "GET"
+    },
+  },
 }
 
 module.exports = data;

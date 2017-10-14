@@ -1,7 +1,7 @@
 {
   "name": "hot-mock-server",
   "preferGlobal": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -45,11 +45,12 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "caller": "^1.0.1",
+    "chalk": "^2.1.0",
+    "chokidar": "^1.7.0",
     "commander": "^2.9.0",
     "cors": "^2.8.3",
     "express": "^4.15.2",
-    "morgan": "^1.8.1",
-    "path": "^0.12.7"
+    "morgan": "^1.8.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -58,6 +59,7 @@
     "codecov": "^2.1.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
+    "rimraf": "^2.6.2",
     "thunk-mocha": "^1.0.8"
   }
 }

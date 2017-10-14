@@ -21,6 +21,7 @@ A HTTP Server for Mock Data.
 * [body-parser](https://github.com/expressjs/body-parser): parse json body
 * [caller](totherik/caller): figure out the caller, to generate module path
 * [commander](https://github.com/tj/commander.js): generate command-line interface
+* [chokidar](https://github.com/paulmillr/chokidar): watch mock files
 
 ## Preparations
 
@@ -36,7 +37,6 @@ A HTTP Server for Mock Data.
 
 * Data directory sample: `data-sample`
 * Conmmand sample: `hmserver -d "./data-sample" -p 3000`
-* Please ensure there is an `index.js` file in the root of data directory
 
 ## Licence
 
