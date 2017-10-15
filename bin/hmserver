@@ -13,14 +13,13 @@ commander.version(pkg.version)
   .option('-p --port <port>', 'port will be listened')
   .parse(process.argv);
 
-if(!commander.dataPath) return console.error('`data-path` is required');
-if(!commander.port) return console.error('`port` is required');
-
-const absPath = path.resolve(process.cwd(), commander.dataPath);
-
-generateApp(absPath).then((app) => {
-  app.listen(commander.port, () => {
-    console.log(`Mock server is now running at port ${commander.port}...`);
+  const dataPath = commander.dataPath || 'mock';
+  const port = commander.port || '8000';
+  
+  const absPath = path.resolve(process.cwd(), dataPath);
+  
+  generateApp(absPath).then((app) => {
+    app.listen(port, () => {
+      console.log(`Mock server is now running at port ${port}...`);
+    });
   });
-});
-
