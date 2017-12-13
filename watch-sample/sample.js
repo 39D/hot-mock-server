@@ -1,0 +1,3 @@
+sampleData = {
+	sampleProp: 'sample'
+}

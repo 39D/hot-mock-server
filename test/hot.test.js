@@ -24,10 +24,11 @@ let newFileData = fs.readFileSync(newFileSrc);
 
 describe('test app', () => {
   const testDataDir = path.join(__dirname, './data');
+  const watchDataDir = path.resolve(__dirname, './watchData');
   let app;
   
   before((done) => {
-    generateApp(testDataDir).then((testApp) => {
+    generateApp(testDataDir, watchDataDir).then((testApp) => {
       app = testApp;
       done();
     });

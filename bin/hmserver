@@ -11,14 +11,16 @@ const pkg = require('../package.json');
 commander.version(pkg.version)
   .option('-d --data-path <path>', 'data source path')
   .option('-p --port <port>', 'port will be listened')
+  .option('-w --watch <path>', 'path to watch for changes')
   .parse(process.argv);
 
   const dataPath = commander.dataPath || 'mock';
   const port = commander.port || '8000';
+  const watch = commander.watch || '.';
   
   const absPath = path.resolve(process.cwd(), dataPath);
   
-  generateApp(absPath).then((app) => {
+  generateApp(absPath, watch).then((app) => {
     app.listen(port, () => {
       console.log(`Mock server is now running at port ${port}...`);
     });
