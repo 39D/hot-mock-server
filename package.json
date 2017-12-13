@@ -1,7 +1,7 @@
 {
   "name": "hot-mock-server",
   "preferGlobal": true,
-  "version": "2.0.1",
+  "version": "2.1.0",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -50,6 +50,7 @@
     "commander": "^2.9.0",
     "cors": "^2.8.3",
     "express": "^4.15.2",
+    "express-fileupload": "^0.3.0",
     "morgan": "^1.8.1"
   },
   "devDependencies": {
